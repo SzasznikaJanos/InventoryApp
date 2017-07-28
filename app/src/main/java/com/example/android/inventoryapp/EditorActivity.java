@@ -193,8 +193,13 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         {
             @Override
             public void onClick(View v) {
-                int currentQuantity = parseInt(mQuantityEditText.getText().toString());
-
+              
+                int currentQuantity;
+                if(mQuantityEditText.getText ().toString ().equals ("")){
+                    currentQuantity = 0;
+                }else {
+                    currentQuantity = parseInt (mQuantityEditText.getText ().toString ());
+                }
                 currentQuantity++;
                 mQuantityEditText.setText(String.valueOf(currentQuantity));
             }
